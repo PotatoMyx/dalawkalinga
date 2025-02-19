@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalaw Kalinga Project</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+
+    <style>
+       
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Lexend", sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+
+ 
+        .background {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+
+       
+        .background::before {
+            content: "";
+            background-image: url("https://gk1world.com/Images/Revamp2019/vol_Skills.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+
+       
+        .navbar {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+        }
+
+
+        .navbar ul {
+            list-style-type: none;
+            background-color: rgba(90, 110, 70);
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            min-height: 80px;
+            width: 100%;
+        }
+
+
+        .navbar a {
+            color: white;
+            font-family: "Lexend", serif;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            padding: 15px;
+            margin: 15px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+
+        .navbar a:hover {
+            background-color: #3c4a2f;
+            transform: scale(1.2);
+        }
+
+
+        .navbar li {
+            float: left;
+        }
+
+
+        .navbar .logo img {
+            height: 50px;
+            width: auto;
+            vertical-align: middle;
+            margin: 0 15px;
+        }
+
+
+        .navbar .rightside {
+            margin-left: auto;
+        }
+
+
+        .navbar .rightside a {
+            background-color: rgb(28, 122, 230);
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+
+        .navbar .rightside a:hover {
+            background-color: rgb(18, 92, 200);
+            transform: scale(1.2);
+            transform-origin: center;
+        }
+
+
+       
+        .introduction {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            z-index: 1;
+        }
+
+
+        .introduction h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+
+        .introduction h2 {
+            margin: 10px 0;
+            font-size: 1.5rem;
+            color: #555;
+        }
+
+
+        .introduction p {
+            margin: 20px 0;
+            font-size: 1rem;
+            color: #666;
+        }
+
+
+        .learnmore {
+            background-color: rgb(28, 122, 230);
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+
+        .learnmore a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+
+        .learnmore:hover {
+            background-color: rgb(18, 92, 200);
+        }
+
+
+       
+        .map-container {
+            max-width: 1000px;
+            height: 300px;
+            margin: 20px auto;
+        }
+
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 10px;
+        }
+
+
+       
+        .box {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .box:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+
+       
+        .box .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+
+        .box:hover .overlay {
+            opacity: 1;
+        }
+
+
+        .box-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+
+
+        .section-background {
+            background: linear-gradient(135deg, #083103, #beb6b6);
+            padding: 30px 0;
+        }
+
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+
+
+
+    </style>
+</head>
+
+
+<body>
+    <div class="background">
+        <nav class="navbar">
+            <ul>
+                <li class="logo">
+                    <img src="https://64.media.tumblr.com/cc717380e4a8e57614d188f5bcc1a7ba/e160f3129a09e6cb-ed/s500x750/3bd7006d86ff8696f46d618087eb71f19531bb3f.pnj"
+                        alt="Logo">
+                </li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+                <li class="rightside"><a href="donatesection.html">Get Involved</a></li>
+            </ul>
+        </nav>
+
+
+        <div class="introduction">
+            <h1>All for One.</h1>
+            <h2>One for All.</h2>
+            <p>Dalaw Kalinga project strives to be a community-oriented charity work aimed to help food-impoverished
+                families and healthcare/frontline workers.</p>
+            <div class="learnmore">
+                <a href="https://www.facebook.com/AMPCSPS/videos/dalaw-kalinga-program-2017/1604830319582307/">Learn More Information</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.285519279001!2d121.0965490750749!3d14.6397271761176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b9cbd5cd1aab%3A0x90925885937bdcf1!2sDalaw%20Kalinga%20Foundation!5e0!3m2!1sen!2sph!4v1739318630110!5m2!1sen!2sph"
+            allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+
+
+    <section class="section-background">
+    <div class="box-container">
+        <a href="#" class="box">
+            <img src="https://www.gk1world.com/Media/02ABOUTGK_04missiovision_01photo.png" alt="Image 1">
+            <div class="overlay">We Help</div>
+        </a>
+
+
+        <a href="#" class="box">
+            <img src="https://www.gk1world.com/Images/Site_Updated/Preview_Image/01%20HOME_05%20programs_03%20GK%20Villages_photo_01%20static.jpg" alt="Image 2">
+            <div class="overlay">We Build</div>
+        </a>
+
+
+        <a href="#" class="box">
+            <img src="https://gk1world.com/media/02ABOUTGK_02banner_photo.png" alt="Image 3">
+            <div class="overlay">We Inspire</div>
+        </a>
+    </div>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2025 Gawad Kalinga. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+
+
+
+</body>
+
+
+</html>
+
+
